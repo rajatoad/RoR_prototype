@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ArmData" load_steps=3 format=3 uid="uid://i3ftx6cf7u3g"]
+
+[ext_resource type="Script" uid="uid://myh4rg7giobt" path="res://Entities/Mecha/Limb/Scripts/arm_data.gd" id="1_au7k6"]
+[ext_resource type="Resource" uid="uid://8i4h1yhsapj8" path="res://Entities/Mecha/Weapon/weapon_1.tres" id="2_q1bfn"]
+
+[resource]
+script = ExtResource("1_au7k6")
+weapon = ExtResource("2_q1bfn")
+metadata/_custom_type_script = "uid://myh4rg7giobt"

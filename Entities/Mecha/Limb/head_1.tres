@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HeadData" load_steps=2 format=3 uid="uid://cmfguhbsr5kv1"]
+
+[ext_resource type="Script" uid="uid://q7v8a0wxfbuq" path="res://Entities/Mecha/Limb/Scripts/head_data.gd" id="1_p8ao5"]
+
+[resource]
+script = ExtResource("1_p8ao5")
+metadata/_custom_type_script = "uid://q7v8a0wxfbuq"

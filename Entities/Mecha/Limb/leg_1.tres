@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LegData" load_steps=2 format=3 uid="uid://chn3006ab3utj"]
+
+[ext_resource type="Script" uid="uid://bt80cxvnwnv3d" path="res://Entities/Mecha/Limb/Scripts/leg_data.gd" id="1_p62mp"]
+
+[resource]
+script = ExtResource("1_p62mp")
+metadata/_custom_type_script = "uid://bt80cxvnwnv3d"

@@ -1,0 +1,70 @@
+[gd_scene load_steps=17 format=3 uid="uid://7nkw4i2pbl3g"]
+
+[ext_resource type="Texture2D" uid="uid://ctjobowkxxdn7" path="res://Entities/Mecha/Sprites/B1_Trans.png" id="1_ah4g2"]
+[ext_resource type="Script" uid="uid://d3s1xhw0dpmjk" path="res://Entities/Mecha/mecha.gd" id="1_rghfr"]
+[ext_resource type="Script" uid="uid://d2oxihtqjl6ek" path="res://Entities/Mecha/Limb/Scripts/core_limb_manager.gd" id="3_anwip"]
+[ext_resource type="Script" uid="uid://da0saktewrhxf" path="res://Entities/Mecha/Limb/Scripts/limb.gd" id="3_u5jvr"]
+[ext_resource type="Resource" uid="uid://cmfguhbsr5kv1" path="res://Entities/Mecha/Limb/head_1.tres" id="4_s61er"]
+[ext_resource type="Resource" uid="uid://i3ftx6cf7u3g" path="res://Entities/Mecha/Limb/arm_1.tres" id="5_s61er"]
+[ext_resource type="Script" uid="uid://56ge6ngn5cqb" path="res://Entities/Mecha/Limb/Scripts/movement_limb.gd" id="7_ags1v"]
+[ext_resource type="Resource" uid="uid://sbqojrhybjav" path="res://Entities/Mecha/Limb/torso_1.tres" id="7_pemse"]
+[ext_resource type="Resource" uid="uid://chn3006ab3utj" path="res://Entities/Mecha/Limb/leg_1.tres" id="8_bucwf"]
+[ext_resource type="Script" uid="uid://dfye5gxwfby3u" path="res://Entities/Mecha/Limb/Scripts/attack_limb.gd" id="9_ipmyj"]
+[ext_resource type="Resource" uid="uid://8i4h1yhsapj8" path="res://Entities/Mecha/Weapon/weapon_1.tres" id="12_vr8f3"]
+[ext_resource type="Script" uid="uid://dclctrmmn0itt" path="res://Entities/Mecha/Weapon/Scripts/damage_data.gd" id="13_ags1v"]
+[ext_resource type="Script" uid="uid://bfc7tnpimn86" path="res://Entities/Mecha/movement_limb_manager.gd" id="14_520et"]
+[ext_resource type="Script" uid="uid://bcqmeiisfgxqi" path="res://Entities/Mecha/attack_limb_manager.gd" id="15_it774"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rghfr"]
+size = Vector2(25, 47)
+
+[sub_resource type="Resource" id="Resource_ipmyj"]
+script = ExtResource("13_ags1v")
+metadata/_custom_type_script = "uid://dclctrmmn0itt"
+
+[node name="Mecha" type="AnimatableBody2D"]
+script = ExtResource("1_rghfr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -27)
+texture = ExtResource("1_ah4g2")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -23.5)
+shape = SubResource("RectangleShape2D_rghfr")
+
+[node name="CoreLimbManager" type="Node" parent="."]
+script = ExtResource("3_anwip")
+
+[node name="Head" type="Node" parent="CoreLimbManager"]
+script = ExtResource("3_u5jvr")
+limb_data = ExtResource("4_s61er")
+
+[node name="Torso" type="Node" parent="CoreLimbManager"]
+script = ExtResource("3_u5jvr")
+limb_data = ExtResource("7_pemse")
+
+[node name="MovementLimbManager" type="Node" parent="."]
+script = ExtResource("14_520et")
+
+[node name="Leg" type="Node" parent="MovementLimbManager"]
+script = ExtResource("7_ags1v")
+limb_data = ExtResource("8_bucwf")
+
+[node name="Leg2" type="Node" parent="MovementLimbManager"]
+script = ExtResource("7_ags1v")
+limb_data = ExtResource("8_bucwf")
+
+[node name="AttackLimbManager" type="Node" parent="."]
+script = ExtResource("15_it774")
+
+[node name="Arm" type="Node" parent="AttackLimbManager"]
+script = ExtResource("9_ipmyj")
+weapon_data = ExtResource("12_vr8f3")
+damage_data = SubResource("Resource_ipmyj")
+limb_data = ExtResource("5_s61er")
+
+[node name="Arm2" type="Node" parent="AttackLimbManager"]
+script = ExtResource("9_ipmyj")
+limb_data = ExtResource("5_s61er")

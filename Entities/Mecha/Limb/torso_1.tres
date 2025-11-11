@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TorsoData" load_steps=2 format=3 uid="uid://sbqojrhybjav"]
+
+[ext_resource type="Script" uid="uid://cryno76r4qpnx" path="res://Entities/Mecha/Limb/Scripts/torso_data.gd" id="1_lvyvs"]
+
+[resource]
+script = ExtResource("1_lvyvs")
+metadata/_custom_type_script = "uid://cryno76r4qpnx"

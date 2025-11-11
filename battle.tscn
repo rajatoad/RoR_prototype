@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1flcfb3ek8nt"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="PlayerUnits" type="Node2D" parent="."]
+
+[node name="Mecha" type="CharacterBody2D" parent="PlayerUnits"]

@@ -1,0 +1,189 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyrobxkwnkyia"]
+
+[ext_resource type="Texture2D" uid="uid://df1rfdp4p2x4t" path="res://icon.svg" id="1_t7fii"]
+
+[node name="BattleUi" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 104.0
+grow_horizontal = 0
+columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Arm"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/GridContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Head"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Arm"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Leg"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/GridContainer/VBoxContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Torso"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/GridContainer/VBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Leg"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -54.0
+offset_right = 140.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Heat"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 44.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Weapon"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Weapon"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_t7fii")
+expand_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Attack"
+
+[node name="Button2" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Move"
