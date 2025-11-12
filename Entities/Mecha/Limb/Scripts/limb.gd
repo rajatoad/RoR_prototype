@@ -5,6 +5,9 @@ signal limb_active(limb : Limb)
 signal limb_destroyed(limb : Limb)
 signal limb_undestroyed(limb : Limb)
 
+signal armor_updated(limb : Limb)
+signal health_updated(limb : Limb)
+
 @export var limb_data : LimbData
 
 var current_health : int = 100
@@ -24,7 +27,7 @@ func _ready() -> void:
 		max_armor = limb_data.armor
 
 func handle_heal(amount: int) -> void:
-	update_health(-amount)
+	_update_health(-amount)
 	if not is_active and current_health >= (limb_data.health / 2):
 		is_active = true
 		limb_active.emit(self)
@@ -33,23 +36,25 @@ func handle_heal(amount: int) -> void:
 		limb_undestroyed.emit(self)
 
 func handle_armor_heal(amount: int) -> void:
-	update_armor(-amount)
+	_update_armor(-amount)
 
 func handle_on_hit(damage_data: DamageData, hit_chance: float) -> void:
 	if limb_data.dodge_change < hit_chance:
-		handle_damage(damage_data)
+		_handle_damage(damage_data)
 
-func handle_damage(damage_data: DamageData) -> void:
+func _handle_damage(damage_data: DamageData) -> void:
 	if current_armor > 0:
-		update_armor(damage_data.damage)
+		_update_armor(damage_data.damage)
 	elif current_health > 0:
-		update_health(damage_data.damage)
+		_update_health(damage_data.damage)
 
-func update_armor(amount: int) -> void:
+func _update_armor(amount: int) -> void:
 	current_armor = clampi(current_armor - amount, 0, max_armor)
+	armor_updated.emit(self)
 
-func update_health(amount : int) -> void:
+func _update_health(amount : int) -> void:
 	current_health = clampi(current_health - amount, 0, max_health)
+	health_updated.emit(self)
 	if current_health <= 0 and is_active and not is_destroyed:
 		is_active = false
 		is_destroyed = true

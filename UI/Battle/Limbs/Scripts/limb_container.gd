@@ -31,14 +31,17 @@ func setup_limb_ui() -> void:
 		# UPDATE LIMB TEXTURE
 		if limb.limb_data.texture:
 			texture_rect.texture = limb.limb_data.texture
+		
+		limb.armor_updated.connect(update_armor)
+		limb.health_updated.connect(update_health)
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
 
-func update_health() -> void:
+func update_health(_limb: Limb) -> void:
 	health.value = limb.current_health
 	#pass
 
-func update_armor() -> void:
+func update_armor(_limb: Limb) -> void:
 	armor.value = limb.current_armor

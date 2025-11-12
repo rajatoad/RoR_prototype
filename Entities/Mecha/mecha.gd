@@ -5,6 +5,7 @@ class_name Mecha extends AnimatableBody2D
 @onready var movement_limb_manager: MovementLimbManager = $MovementLimbManager
 
 @export var max_heat : float = 1000
+@export var is_player_mecha : bool = false
 
 var limbs : Array[Limb] = []
 
@@ -14,9 +15,15 @@ signal overheated(status: bool)
 
 var is_overheated : bool = false
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	PlayerManager.mecha = self
+	if is_player_mecha:
+		PlayerManager.mecha = self
+	else:
+		EnemyManager.mecha = self
+
 	for l in core_limb_manager.limbs:
 		limbs.append(l)
 	for l in attack_limb_manager.limbs:
