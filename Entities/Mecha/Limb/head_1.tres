@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_p8ao5")
+limb_type = "Head"
 metadata/_custom_type_script = "uid://q7v8a0wxfbuq"

@@ -1,6 +1,6 @@
 class_name MovementLimb extends Limb
 
-@export var move_speed : int = 100
+#@export var move_speed : int = 100
 
 #@export var heat_generated : float = 10
 

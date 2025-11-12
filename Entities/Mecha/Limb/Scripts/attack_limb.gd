@@ -1,7 +1,7 @@
 class_name AttackLimb extends Limb
 
 signal out_of_ammo
-signal heat_generated(heat: float)
+
 
 @export var weapon_data : WeaponData = null
 
@@ -35,7 +35,7 @@ func use_weapon() -> DamageData:
 		if can_shoot and ammo > 0:
 			ammo -= 1
 			can_shoot = false
-			heat_generated.emit(weapon_data.heat_generated)
+			#heat_generated.emit(weapon_data.heat_generated)
 		if ammo == 0:
 			can_shoot = false
 			out_of_ammo.emit()

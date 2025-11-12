@@ -7,11 +7,11 @@ signal limb_undestroyed(limb : Limb)
 
 @export var limb_data : LimbData
 
-var current_health : float = 100
-var current_armor : float = 100
+var current_health : int = 100
+var current_armor : int = 100
 
-var max_health : float = 100
-var max_armor : float = 100
+var max_health : int = 100
+var max_armor : int = 100
 
 var is_active: bool = true
 var is_destroyed: bool = false
@@ -46,10 +46,10 @@ func handle_damage(damage_data: DamageData) -> void:
 		update_health(damage_data.damage)
 
 func update_armor(amount: int) -> void:
-	current_armor = clampf(current_armor - amount, 0, max_armor)
+	current_armor = clampi(current_armor - amount, 0, max_armor)
 
 func update_health(amount : int) -> void:
-	current_health = clampf(current_health - amount, 0, max_health)
+	current_health = clampi(current_health - amount, 0, max_health)
 	if current_health <= 0 and is_active and not is_destroyed:
 		is_active = false
 		is_destroyed = true

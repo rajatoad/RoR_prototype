@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="RoR_Prototype"
+run/main_scene="uid://1flcfb3ek8nt"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerManager="*res://00_Globals/player_manager.gd"
+
 [display]
 
-window/size/viewport_width=426
-window/size/viewport_height=240
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"

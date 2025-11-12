@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_lvyvs")
+limb_type = "Torso"
 metadata/_custom_type_script = "uid://cryno76r4qpnx"

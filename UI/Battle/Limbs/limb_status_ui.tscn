@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://2l5q6n534g5k"]
+
+[ext_resource type="Script" uid="uid://bt12lnjngy3o2" path="res://UI/Battle/Limbs/limb_status_ui.gd" id="1_6xk12"]
+
+[node name="LimbStatusUI" type="GridContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 104.0
+grow_horizontal = 0
+columns = 3
+script = ExtResource("1_6xk12")
