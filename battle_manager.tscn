@@ -1,39 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://1flcfb3ek8nt"]
+[gd_scene load_steps=7 format=3 uid="uid://1flcfb3ek8nt"]
 
 [ext_resource type="Script" uid="uid://c7ha4ddghpkew" path="res://battle_manager.gd" id="1_lv0jf"]
-[ext_resource type="PackedScene" uid="uid://7nkw4i2pbl3g" path="res://Entities/Mecha/mecha.tscn" id="2_41eye"]
-[ext_resource type="PackedScene" uid="uid://dyrobxkwnkyia" path="res://UI/Battle/battle_ui.tscn" id="3_rhx7j"]
+[ext_resource type="Script" uid="uid://c4jdt2r14igs5" path="res://player_unit_manager.gd" id="2_lv0jf"]
+[ext_resource type="PackedScene" uid="uid://ccet1kkvb2pqa" path="res://Entities/simple_mecha/simple_mech.tscn" id="3_41eye"]
+[ext_resource type="Script" uid="uid://cfwk4kaqx36bc" path="res://enemy_unit_manager.gd" id="4_41eye"]
+[ext_resource type="PackedScene" uid="uid://d2wv8tq2vcyy0" path="res://NewUI/battle_ui.tscn" id="5_x37lc"]
+[ext_resource type="Script" uid="uid://b3b7xurlqar1p" path="res://NewUI/battle_ui.gd" id="6_jvf6o"]
 
-[node name="BattleManager" type="Node2D" node_paths=PackedStringArray("player_mech", "enemy_mech")]
+[node name="BattleManager" type="Node2D"]
 script = ExtResource("1_lv0jf")
-player_mech = NodePath("Mecha")
-enemy_mech = NodePath("Mecha2")
 
-[node name="Mecha" parent="." instance=ExtResource("2_41eye")]
-position = Vector2(128, 213)
-is_player_mecha = true
+[node name="PlayerUnitManager" type="Node2D" parent="."]
+script = ExtResource("2_lv0jf")
 
-[node name="Mecha2" parent="." instance=ExtResource("2_41eye")]
-position = Vector2(410, 216)
+[node name="SimpleMech" parent="PlayerUnitManager" instance=ExtResource("3_41eye")]
 
-[node name="BattleUi" parent="." instance=ExtResource("3_rhx7j")]
+[node name="EnemyUnitManager" type="Node2D" parent="."]
+script = ExtResource("4_41eye")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="SimpleMech" parent="EnemyUnitManager" instance=ExtResource("3_41eye")]
 
-[node name="Clock" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 327.0
-offset_top = 27.0
-offset_right = 346.0
-offset_bottom = 50.0
-grow_horizontal = 2
-text = "11"
+[node name="EnvironmentManager" type="Node2D" parent="."]
+
+[node name="Hazards" type="Node2D" parent="EnvironmentManager"]
+
+[node name="Debuff" type="Node2D" parent="EnvironmentManager"]
+
+[node name="BattleUI" parent="." instance=ExtResource("5_x37lc")]
+script = ExtResource("6_jvf6o")

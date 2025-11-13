@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccet1kkvb2pqa"]
+
+[ext_resource type="Script" uid="uid://da33qn0jcbvob" path="res://Entities/simple_mecha/simple_mech.gd" id="1_dfx55"]
+[ext_resource type="Script" uid="uid://2nub6iflgti3" path="res://Entities/simple_mecha/basic_attack.gd" id="2_j8cue"]
+[ext_resource type="Script" uid="uid://c86awoh4twntc" path="res://Entities/simple_mecha/attack_manager.gd" id="2_xxawk"]
+[ext_resource type="Script" uid="uid://dps4avcxgorxq" path="res://Entities/simple_mecha/health_manager.gd" id="4_7ekap"]
+
+[node name="SimpleMech" type="Node2D"]
+script = ExtResource("1_dfx55")
+
+[node name="AttackManager" type="Node" parent="."]
+script = ExtResource("2_xxawk")
+
+[node name="BasicAttack" type="Node" parent="AttackManager"]
+script = ExtResource("2_j8cue")
+
+[node name="HealthManager" type="Node" parent="."]
+script = ExtResource("4_7ekap")
