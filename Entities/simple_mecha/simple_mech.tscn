@@ -14,5 +14,12 @@ script = ExtResource("2_xxawk")
 [node name="BasicAttack" type="Node" parent="AttackManager"]
 script = ExtResource("2_j8cue")
 
+[node name="CooldownTimer" type="Timer" parent="AttackManager/BasicAttack"]
+
+[node name="BasicAttack2" type="Node" parent="AttackManager"]
+script = ExtResource("2_j8cue")
+
+[node name="CooldownTimer" type="Timer" parent="AttackManager/BasicAttack2"]
+
 [node name="HealthManager" type="Node" parent="."]
 script = ExtResource("4_7ekap")

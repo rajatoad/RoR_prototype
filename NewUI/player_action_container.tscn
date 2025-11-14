@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ildwwa5ap45t"]
+
+[node name="PlayerActionContainer" type="VBoxContainer"]
+
+[node name="AttackButton" type="Button" parent="."]
+layout_mode = 2
+text = "Attack"
+
+[node name="DefendButton" type="Button" parent="."]
+layout_mode = 2
+text = "Defend"
+
+[node name="SkillButton" type="Button" parent="."]
+layout_mode = 2
+text = "Skill"
+
+[node name="MoveButton" type="Button" parent="."]
+layout_mode = 2
+text = "Move"

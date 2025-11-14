@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2k1g0hh1shwr"]
+
+[ext_resource type="Script" uid="uid://cvkqqb210s7fq" path="res://NewUI/PlayerAttackUI/attack_container.gd" id="1_fhvmk"]
+
+[node name="AttackContainer" type="HBoxContainer"]
+script = ExtResource("1_fhvmk")
+
+[node name="AttackNameLabel" type="Label" parent="."]
+layout_mode = 2
+
+[node name="DamageLabel" type="Label" parent="."]
+layout_mode = 2
+
+[node name="CooldownLabel" type="Label" parent="."]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="."]
+layout_mode = 2
+text = "Select"

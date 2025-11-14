@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://1flcfb3ek8nt"]
+[gd_scene load_steps=6 format=3 uid="uid://1flcfb3ek8nt"]
 
 [ext_resource type="Script" uid="uid://c7ha4ddghpkew" path="res://battle_manager.gd" id="1_lv0jf"]
 [ext_resource type="Script" uid="uid://c4jdt2r14igs5" path="res://player_unit_manager.gd" id="2_lv0jf"]
 [ext_resource type="PackedScene" uid="uid://ccet1kkvb2pqa" path="res://Entities/simple_mecha/simple_mech.tscn" id="3_41eye"]
 [ext_resource type="Script" uid="uid://cfwk4kaqx36bc" path="res://enemy_unit_manager.gd" id="4_41eye"]
-[ext_resource type="PackedScene" uid="uid://d2wv8tq2vcyy0" path="res://NewUI/battle_ui.tscn" id="5_x37lc"]
-[ext_resource type="Script" uid="uid://b3b7xurlqar1p" path="res://NewUI/battle_ui.gd" id="6_jvf6o"]
+[ext_resource type="PackedScene" uid="uid://d2wv8tq2vcyy0" path="res://NewUI/BattleUI/battle_ui.tscn" id="5_x37lc"]
 
 [node name="BattleManager" type="Node2D"]
 script = ExtResource("1_lv0jf")
@@ -15,10 +14,14 @@ script = ExtResource("2_lv0jf")
 
 [node name="SimpleMech" parent="PlayerUnitManager" instance=ExtResource("3_41eye")]
 
+[node name="SimpleMech2" parent="PlayerUnitManager" instance=ExtResource("3_41eye")]
+
 [node name="EnemyUnitManager" type="Node2D" parent="."]
 script = ExtResource("4_41eye")
 
 [node name="SimpleMech" parent="EnemyUnitManager" instance=ExtResource("3_41eye")]
+
+[node name="SimpleMech2" parent="EnemyUnitManager" instance=ExtResource("3_41eye")]
 
 [node name="EnvironmentManager" type="Node2D" parent="."]
 
@@ -27,4 +30,3 @@ script = ExtResource("4_41eye")
 [node name="Debuff" type="Node2D" parent="EnvironmentManager"]
 
 [node name="BattleUI" parent="." instance=ExtResource("5_x37lc")]
-script = ExtResource("6_jvf6o")

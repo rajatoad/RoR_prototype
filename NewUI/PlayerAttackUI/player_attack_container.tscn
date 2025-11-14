@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxvr865kqc7aw"]
+
+[ext_resource type="Script" uid="uid://c5nbej33dlb50" path="res://NewUI/PlayerAttackUI/player_attack_container.gd" id="1_c43ar"]
+[ext_resource type="PackedScene" uid="uid://d2k1g0hh1shwr" path="res://NewUI/PlayerAttackUI/attack_container.tscn" id="2_fpsg2"]
+[ext_resource type="Script" uid="uid://4osnpjs5yktb" path="res://NewUI/PlayerAttackUI/select_unit_container.gd" id="2_j53uu"]
+[ext_resource type="PackedScene" uid="uid://u5kn3udonqiu" path="res://NewUI/PlayerAttackUI/unit_container.tscn" id="3_sciaj"]
+[ext_resource type="Script" uid="uid://dti62iyxjwe3y" path="res://NewUI/PlayerAttackUI/attack_select_container.gd" id="4_sciaj"]
+[ext_resource type="Script" uid="uid://lmqdnt2tujq3" path="res://NewUI/PlayerAttackUI/target_select_container.gd" id="6_orisx"]
+[ext_resource type="PackedScene" uid="uid://ct0nri3kttird" path="res://NewUI/PlayerAttackUI/enemy_unit_container.tscn" id="6_ovo7l"]
+
+[node name="PlayerAttackContainer" type="VBoxContainer"]
+size_flags_horizontal = 3
+script = ExtResource("1_c43ar")
+
+[node name="SelectUnitContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_j53uu")
+
+[node name="UnitContainer" parent="SelectUnitContainer" instance=ExtResource("3_sciaj")]
+layout_mode = 2
+
+[node name="AttackSelectContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("4_sciaj")
+
+[node name="AttackContainer" parent="AttackSelectContainer" instance=ExtResource("2_fpsg2")]
+layout_mode = 2
+
+[node name="TargetSelectContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("6_orisx")
+
+[node name="EnemyUnitContainer" parent="TargetSelectContainer" instance=ExtResource("6_ovo7l")]
+layout_mode = 2

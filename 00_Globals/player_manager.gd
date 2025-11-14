@@ -1,6 +1,9 @@
 extends Node
 
-var mecha : Mecha = null
+var player_units : Array[SimpleMech] = []
+
+var selected_unit : SimpleMech = null
+var selected_attack : BasicAttack = null
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
