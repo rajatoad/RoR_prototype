@@ -36,5 +36,5 @@ func _exit_tree() -> void:
 	if select_button.button_up.is_connected(_select_unit):
 		select_button.button_up.disconnect(_select_unit)
 
-func _update_ui() -> void:
+func _update_ui(_value : int) -> void:
 	setup_ui()
