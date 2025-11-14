@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp1223gw8e6"]
+
+[ext_resource type="Script" uid="uid://61nt24hk0am3" path="res://NewUI2/BattleUI/UnitInfoContainer/StatusContainer/status_container.gd" id="1_aawm4"]
+
+[node name="StatusContainer" type="VBoxContainer"]
+alignment = 2
+script = ExtResource("1_aawm4")
+
+[node name="ArmorContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ArmorContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Armor"
+
+[node name="ProgressBar" type="ProgressBar" parent="ArmorContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
+[node name="HealthContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HealthContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Health"
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
+[node name="HeatContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HeatContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Heat"
+
+[node name="ProgressBar" type="ProgressBar" parent="HeatContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8

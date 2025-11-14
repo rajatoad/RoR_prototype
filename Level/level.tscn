@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://omw3p1xvmogm"]
+
+[ext_resource type="PackedScene" uid="uid://ccet1kkvb2pqa" path="res://Entities/simple_mecha/simple_mech.tscn" id="1_o6mkr"]
+[ext_resource type="Script" uid="uid://dwp4bxqbg1fbp" path="res://Level/level.gd" id="1_qmtf6"]
+[ext_resource type="PackedScene" uid="uid://b1ho47nen6eg3" path="res://NewUI2/BattleUI/battle_ui.tscn" id="3_uawph"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_qmtf6")
+
+[node name="PlayerUnits" type="Node2D" parent="."]
+
+[node name="SimpleMech" parent="PlayerUnits" instance=ExtResource("1_o6mkr")]
+position = Vector2(83, 192)
+
+[node name="SimpleMech2" parent="PlayerUnits" instance=ExtResource("1_o6mkr")]
+position = Vector2(162, 155)
+
+[node name="EnemyUnits" type="Node2D" parent="."]
+
+[node name="SimpleMech" parent="EnemyUnits" instance=ExtResource("1_o6mkr")]
+position = Vector2(959, 155)
+
+[node name="SimpleMech2" parent="EnemyUnits" instance=ExtResource("1_o6mkr")]
+position = Vector2(1022, 191)
+
+[node name="BattleUi" parent="." instance=ExtResource("3_uawph")]

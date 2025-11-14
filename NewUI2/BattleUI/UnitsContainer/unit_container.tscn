@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bne68ej80ve3w"]
+
+[ext_resource type="Texture2D" uid="uid://df1rfdp4p2x4t" path="res://icon.svg" id="1_5mhwp"]
+[ext_resource type="Script" uid="uid://dtpeuc5nejx6q" path="res://NewUI2/BattleUI/UnitsContainer/unit_container.gd" id="1_u0l74"]
+
+[node name="UnitContainer" type="VBoxContainer"]
+size_flags_horizontal = 0
+script = ExtResource("1_u0l74")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Simple Mech"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_5mhwp")
+expand_mode = 5
+
+[node name="ArmorBar" type="ProgressBar" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
