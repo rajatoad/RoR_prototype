@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1ho47nen6eg3"]
+
+[ext_resource type="Script" uid="uid://c20x3qonv2en2" path="res://NewUI2/BattleUI/PlayerInfoContainer/player_info_container.gd" id="1_06q7s"]
+[ext_resource type="Script" uid="uid://dkwgsikqsgv0k" path="res://NewUI2/BattleUI/UnitsContainer/units_container.gd" id="1_bbvyk"]
+[ext_resource type="Script" uid="uid://ckx0pa72fo4r6" path="res://NewUI2/BattleUI/battle_ui.gd" id="1_tkflt"]
+[ext_resource type="Script" uid="uid://csu6coh65u2ap" path="res://NewUI2/BattleUI/UnitInfoContainer/unit_info_container.gd" id="3_5ljig"]
+[ext_resource type="PackedScene" uid="uid://cp1223gw8e6" path="res://NewUI2/BattleUI/UnitInfoContainer/StatusContainer/status_container.tscn" id="4_tkflt"]
+[ext_resource type="PackedScene" uid="uid://dorngm62qkpln" path="res://NewUI2/BattleUI/UnitInfoContainer/SkillsContainer/skills_container.tscn" id="5_8y0ge"]
+[ext_resource type="Script" uid="uid://tg0ymtjyju3f" path="res://NewUI2/BattleUI/EnemyInfoContainer/enemy_info_container.gd" id="7_8y0ge"]
+
+[node name="BattleUi" type="CanvasLayer"]
+script = ExtResource("1_tkflt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PlayerInfoContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+offset_right = 128.0
+grow_vertical = 0
+script = ExtResource("1_06q7s")
+
+[node name="UnitsContainer" type="VBoxContainer" parent="Control/PlayerInfoContainer"]
+layout_mode = 2
+alignment = 2
+script = ExtResource("1_bbvyk")
+
+[node name="UnitInfoContainer" type="HBoxContainer" parent="Control/PlayerInfoContainer"]
+layout_mode = 2
+script = ExtResource("3_5ljig")
+
+[node name="StatusContainer" parent="Control/PlayerInfoContainer/UnitInfoContainer" instance=ExtResource("4_tkflt")]
+layout_mode = 2
+
+[node name="SkillsContainer" parent="Control/PlayerInfoContainer/UnitInfoContainer" instance=ExtResource("5_8y0ge")]
+layout_mode = 2
+
+[node name="EnemyInfoContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+script = ExtResource("7_8y0ge")
+
+[node name="EnemyUnitsContainer" type="VBoxContainer" parent="Control/EnemyInfoContainer"]
+layout_mode = 2
+script = ExtResource("1_bbvyk")

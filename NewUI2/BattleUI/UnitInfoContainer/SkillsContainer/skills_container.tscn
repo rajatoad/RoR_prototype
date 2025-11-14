@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dorngm62qkpln"]
+
+[ext_resource type="Script" uid="uid://cxyxsajrh5qb7" path="res://NewUI2/BattleUI/UnitInfoContainer/SkillsContainer/skills_container.gd" id="1_21jch"]
+
+[node name="SkillsContainer" type="HBoxContainer"]
+script = ExtResource("1_21jch")

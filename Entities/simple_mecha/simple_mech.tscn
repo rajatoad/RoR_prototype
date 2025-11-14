@@ -1,12 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccet1kkvb2pqa"]
+[gd_scene load_steps=8 format=3 uid="uid://ccet1kkvb2pqa"]
 
 [ext_resource type="Script" uid="uid://da33qn0jcbvob" path="res://Entities/simple_mecha/simple_mech.gd" id="1_dfx55"]
+[ext_resource type="Texture2D" uid="uid://df1rfdp4p2x4t" path="res://icon.svg" id="2_26li8"]
 [ext_resource type="Script" uid="uid://2nub6iflgti3" path="res://Entities/simple_mecha/basic_attack.gd" id="2_j8cue"]
 [ext_resource type="Script" uid="uid://c86awoh4twntc" path="res://Entities/simple_mecha/attack_manager.gd" id="2_xxawk"]
 [ext_resource type="Script" uid="uid://dps4avcxgorxq" path="res://Entities/simple_mecha/health_manager.gd" id="4_7ekap"]
+[ext_resource type="Script" uid="uid://bv83kgq8dw2ue" path="res://Entities/simple_mecha/select_area_2d.gd" id="6_2rym6"]
 
-[node name="SimpleMech" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26li8"]
+size = Vector2(26, 26)
+
+[node name="SimpleMech" type="AnimatableBody2D"]
 script = ExtResource("1_dfx55")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_26li8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_26li8")
 
 [node name="AttackManager" type="Node" parent="."]
 script = ExtResource("2_xxawk")
@@ -23,3 +35,9 @@ script = ExtResource("2_j8cue")
 
 [node name="HealthManager" type="Node" parent="."]
 script = ExtResource("4_7ekap")
+
+[node name="SelectArea2D" type="Area2D" parent="."]
+script = ExtResource("6_2rym6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectArea2D"]
+shape = SubResource("RectangleShape2D_26li8")

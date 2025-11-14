@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cietdh53wkdye"]
+
+[ext_resource type="Script" uid="uid://b0htngtoe6jhp" path="res://NewUI2/BattleUI/UnitInfoContainer/SkillsContainer/skill_container.gd" id="1_jrm8a"]
+
+[node name="SkillContainer" type="VBoxContainer"]
+alignment = 1
+script = ExtResource("1_jrm8a")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Basic Attack"
+
+[node name="DamageLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "10"
+
+[node name="CooldownLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "5"
+
+[node name="SelectButton" type="Button" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Select"
